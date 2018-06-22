@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import Menu from './components/MenuComponent';
 import './App.css';
 
 class App extends Component {
@@ -9,9 +10,10 @@ class App extends Component {
       <div className="App">
         <Navbar dark color="primary">
           <div className="container">
-            <NavbarBrand href="/">React First Try: NavBarBrand</NavbarBrand>
+            <NavbarBrand href="/">React First Trd</NavbarBrand>
           </div>
         </Navbar>
+        <Menu />
       </div>
 
       /*
