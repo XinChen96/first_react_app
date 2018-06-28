@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 
     function RenderDish({dish}) {
-        if (dish != null)
             return(
                 <Card>
                     <CardImg top src={dish.image} alt={dish.name} />
@@ -15,32 +14,29 @@ import { Link } from 'react-router-dom';
                     </CardBody>
                 </Card>
             );
-        else
-            return(
-                <div></div>
-            );
     }
 
-    function RenderComments({dish}) {
-        if (dish != null)
+    function RenderComments({comments}) {
             
-            return dish.comments.map((comm) => {
+            const commentList = comments.map((comment) => {
                 return (
-                    <ul key={comm.id} className="list-unstyled">
-                        <li>{comm.comment}</li>
-                        <li>-- {comm.author} , {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comm.date)))}</li>
+                    <ul key={comment.id} className="list-unstyled">
+                        <li>{comment.comment}</li>
+                        <li>-- {comment.author} , {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</li>
                     </ul>
                 );
             });
             
+            return <div>
+                <h4>Comments</h4> 
+                {commentList}
+                </div>
 
-        else
-            return(
-                <div></div>
-            );
+        
     }
 
     const Dishdetail = (props) => {
+        if (props.dish != null)
         return (
             <div className="container">
             <div className="row">
@@ -63,6 +59,10 @@ import { Link } from 'react-router-dom';
                 </div>
             </div>
             </div>
+        );
+        else
+        return(
+            <div></div>
         );
     }
 
