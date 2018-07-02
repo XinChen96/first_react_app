@@ -19,7 +19,7 @@ class Header extends Component {
         this.toggleModal = this.toggleModal.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
     }
-    
+
     toggleNav() {
         this.setState({
             isNavOpen: !this.state.isNavOpen
@@ -82,7 +82,7 @@ class Header extends Component {
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
-                    <Form onSubmit={this.handleLogin}>
+                        <Form onSubmit={this.handleLogin}>
                             <FormGroup>
                                 <Label htmlFor="username">Username</Label>
                                 <Input type="text" id="username" name="username"
@@ -91,12 +91,12 @@ class Header extends Component {
                             <FormGroup>
                                 <Label htmlFor="password">Password</Label>
                                 <Input type="password" id="password" name="password"
-                                    innerRef={(input) => this.password = input}  />
+                                    innerRef={(input) => this.password = input} />
                             </FormGroup>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" name="remember"
-                                    innerRef={(input) => this.remember = input}  />
+                                        innerRef={(input) => this.remember = input} />
                                     Remember me
                                 </Label>
                             </FormGroup>
